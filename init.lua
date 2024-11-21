@@ -27,7 +27,7 @@ require("lazy").setup({
   require "plugins.neo-tree",
   require "plugins.neoscroll",
   require "plugins.flash",
-  -- require "plugins.avante",
+  require "plugins.avante",
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
