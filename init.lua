@@ -14,7 +14,6 @@ require("lazy").setup({
   { "numToStr/Comment.nvim", opts = {} },
   require "plugins.gitsigns",
   require "plugins.vim-visual-multi",
-  require "plugins.nvim-spectre",
   require "plugins.telescope",
   require "plugins.nvim-lspconfig",
   require "plugins.conform",
@@ -24,10 +23,10 @@ require("lazy").setup({
   require "plugins.mini",
   require "plugins.nvim-treesitter",
   require "plugins.autopairs",
-  require "plugins.neo-tree",
   require "plugins.neoscroll",
   require "plugins.flash",
-  require "plugins.avante",
+  require "plugins.oil",
+  -- require "plugins.avante",
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
