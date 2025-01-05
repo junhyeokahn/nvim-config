@@ -14,7 +14,7 @@ require("lazy").setup({
   { "numToStr/Comment.nvim", opts = {} },
   require "plugins.gitsigns",
   require "plugins.vim-visual-multi",
-  require "plugins.telescope",
+  require "plugins.fzf-lua",
   require "plugins.nvim-lspconfig",
   require "plugins.conform",
   require "plugins.nvim-cmp",

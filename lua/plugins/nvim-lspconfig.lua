@@ -15,15 +15,12 @@ return {
           vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
 
-        map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-        map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-        map("gh", ":ClangdSwitchSourceHeader<CR>", "[G]oto [H]eader")
+        map("<leader>sd", require("fzf-lua").lsp_definitions, "Search definition")
+        map("<leader>sr", require("fzf-lua").lsp_references, "Search references")
 
-        map("<leader>sds", require("telescope.builtin").lsp_document_symbols, "[S]earch [D]ocument [S]ymbols")
-        map("<leader>sws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[S]earch [W]orkspace [S]ymbols")
+        map("gh", ":ClangdSwitchSourceHeader<CR>", "Goto header")
 
-        map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-
+        map("<leader>rn", vim.lsp.buf.rename, "Rename")
         map("K", vim.lsp.buf.hover, "Hover Documentation")
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
