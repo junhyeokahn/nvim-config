@@ -27,6 +27,7 @@ require("lazy").setup({
   require "plugins.flash",
   require "plugins.oil",
   require "plugins.harpoon",
+  require "plugins.git-blame",
   -- require "plugins.avante",
 }, {
   ui = {
