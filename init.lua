@@ -26,6 +26,7 @@ require("lazy").setup({
   require "plugins.neoscroll",
   require "plugins.flash",
   require "plugins.oil",
+  require "plugins.harpoon",
   -- require "plugins.avante",
 }, {
   ui = {

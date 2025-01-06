@@ -22,6 +22,7 @@ return {
     require("fzf-lua").setup {
       actions = {
         files = {
+          true,
           ["ctrl-q"] = {
             fn = fzf.actions.file_edit_or_qf,
             prefix = "select-all+",
