@@ -9,3 +9,8 @@ vim.api.nvim_set_keymap(
   [[:let @/='\<'.expand('<cword>').'\>'<CR>:set hlsearch<CR>]],
   { noremap = true, silent = true }
 )
+
+vim.keymap.set({ "n", "v" }, "<C-a>", "<nop>", { desc = "Deactivate Ctrl-a in normal and visual modes" })
+vim.keymap.set({ "n", "v" }, "<C-x>", "<nop>", { desc = "Deactivate Ctrl-x in normal and visual modes" })
+
+vim.api.nvim_create_user_command("W", "w", {})

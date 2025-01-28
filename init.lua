@@ -18,7 +18,7 @@ require("lazy").setup({
   require "plugins.nvim-lspconfig",
   require "plugins.conform",
   require "plugins.nvim-cmp",
-  require "plugins.catppuccin",
+  require "plugins.colorscheme",
   require "plugins.todo-comments",
   require "plugins.mini",
   require "plugins.nvim-treesitter",

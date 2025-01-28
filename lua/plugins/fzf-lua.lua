@@ -20,6 +20,9 @@ return {
     vim.keymap.set("n", "<leader>gs", fzf.git_status, { desc = "Git status" })
 
     require("fzf-lua").setup {
+      files = {
+        git_icons = false,
+      },
       actions = {
         files = {
           true,

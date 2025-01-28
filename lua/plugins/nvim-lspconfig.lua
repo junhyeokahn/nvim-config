@@ -60,6 +60,9 @@ return {
 
     local servers = {
       clangd = {
+        capabilities = {
+          offsetEncoding = { "utf-16" },
+        },
         handlers = {
           ["textDocument/publishDiagnostics"] = function() end,
         },
