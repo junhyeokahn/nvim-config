@@ -28,7 +28,7 @@ require("lazy").setup({
   require "plugins.oil",
   require "plugins.harpoon",
   require "plugins.git-blame",
-  -- require "plugins.avante",
+  require "plugins.minuet-ai",
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
