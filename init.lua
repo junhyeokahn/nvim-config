@@ -12,6 +12,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { "tpope/vim-sleuth" },
   { "numToStr/Comment.nvim", opts = {} },
+  { "github/copilot.vim" },
   require "plugins.gitsigns",
   require "plugins.vim-visual-multi",
   require "plugins.fzf-lua",
@@ -28,7 +29,6 @@ require("lazy").setup({
   require "plugins.oil",
   require "plugins.harpoon",
   require "plugins.git-blame",
-  require "plugins.minuet-ai",
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
