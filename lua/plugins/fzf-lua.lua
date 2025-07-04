@@ -17,6 +17,14 @@ return {
           },
         },
       },
+      winopts = {
+        border = "rounded",
+      },
+      hls = {
+        border = "FloatBorder",
+        preview_border = "FloatBorder",
+        help_border = "FloatBorder",
+      },
     }
 
     local keymaps = {

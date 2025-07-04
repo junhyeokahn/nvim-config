@@ -54,6 +54,14 @@ return {
         { name = "luasnip" },
         { name = "path" },
       },
+      window = {
+        completion = cmp.config.window.bordered {
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+        },
+        documentation = cmp.config.window.bordered {
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+        },
+      },
     }
   end,
 }
