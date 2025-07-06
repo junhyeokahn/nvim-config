@@ -51,7 +51,7 @@ return {
         keymap("n", "gd", fzf.lsp_definitions, opt("Go to definition"))
         keymap("n", "grD", fzf.lsp_document_diagnostics, opt("Open diagnostics"))
         keymap("n", "grd", vim.diagnostic.open_float, opt("Open diagnostic in float"))
-        keymap("n", "<C-S>", lsp.buf.signature_help, opts)
+        keymap({"n", "i"}, "<C-S>", function() lsp.buf.signature_help({border="single"}) end, opts)
         keymap("n", "K", function() lsp.buf.hover({ border = "single", max_height = 30, max_width = 120 }) end, opt("Toggle hover"))
         keymap("n", "grs", fzf.lsp_document_symbols, opt("Doument Symbols"))
         keymap("n", "grS", fzf.lsp_workspace_symbols, opt("Workspace Symbols"))
