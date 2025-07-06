@@ -10,13 +10,13 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { "tpope/vim-sleuth" },
+  { "NMAC427/guess-indent.nvim" },
   { "numToStr/Comment.nvim", opts = {} },
   { "github/copilot.vim" },
   require "plugins.gitsigns",
   require "plugins.vim-visual-multi",
   require "plugins.fzf-lua",
-  require "plugins.nvim-lspconfig",
+  require "plugins.lsp",
   require "plugins.conform",
   require "plugins.nvim-cmp",
   require "plugins.colorscheme",
