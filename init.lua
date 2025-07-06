@@ -10,7 +10,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { "NMAC427/guess-indent.nvim" },
+  { "NMAC427/guess-indent.nvim", opts = {} },
   { "numToStr/Comment.nvim", opts = {} },
   { "github/copilot.vim" },
   require "plugins.gitsigns",
