@@ -49,6 +49,7 @@ return {
         keymap("n", "gri", fzf.lsp_implementations , opt("Go to implementation"))
         keymap("n", "grr", fzf.lsp_references, opt("Go to References"))
         keymap("n", "gd", fzf.lsp_definitions, opt("Go to definition"))
+        keymap("n", "gh", ":LspClangdSwitchSourceHeader<CR>", opt("Go to header"))
         keymap("n", "grD", fzf.lsp_document_diagnostics, opt("Open diagnostics"))
         keymap("n", "grd", vim.diagnostic.open_float, opt("Open diagnostic in float"))
         keymap({"n", "i"}, "<C-S>", function() lsp.buf.signature_help({border="single"}) end, opts)
