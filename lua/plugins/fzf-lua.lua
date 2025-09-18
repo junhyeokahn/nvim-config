@@ -28,15 +28,15 @@ return {
     }
 
     local keymaps = {
-      { "sh", fzf.help_tags, "Help" },
-      { "sk", fzf.keymaps, "Keymaps" },
-      { "sf", fzf.files, "Files" },
+      { "sh", fzf.help_tags,  "Help" },
+      { "sk", fzf.keymaps,    "Keymaps" },
+      { "sf", fzf.files,      "Files" },
       { "sw", fzf.grep_cword, "Current word" },
-      { "sg", fzf.live_grep_glob, "Live grep (--glob)" },
-      { "sb", fzf.buffers, "Buffers" },
-      { "s/", fzf.lines, "Buffer lines" },
+      { "sg", fzf.live_grep,  "Live grep" },
+      { "sb", fzf.buffers,    "Buffers" },
+      { "s/", fzf.lines,      "Buffer lines" },
       { "st", fzf.treesitter, "Treesitter symbol" },
-      { "sq", fzf.quickfix, "Quickfix list" },
+      { "sq", fzf.quickfix,   "Quickfix list" },
       { "gs", fzf.git_status, "Git status" },
       {
         "sn",

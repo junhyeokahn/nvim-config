@@ -46,16 +46,18 @@ return {
         end
         keymap("n", "grn", lsp.buf.rename, opt("Rename"))
         keymap("n", "gra", fzf.lsp_code_actions, opt("Code Action"))
-        keymap("n", "gri", fzf.lsp_implementations , opt("Go to implementation"))
+        keymap("n", "gri", fzf.lsp_implementations, opt("Go to implementation"))
         keymap("n", "grr", fzf.lsp_references, opt("Go to References"))
         keymap("n", "gd", fzf.lsp_definitions, opt("Go to definition"))
         keymap("n", "gh", ":LspClangdSwitchSourceHeader<CR>", opt("Go to header"))
         keymap("n", "grd", fzf.lsp_document_diagnostics, opt("Open diagnostics"))
-        keymap({"n", "i"}, "<C-S>", function() lsp.buf.signature_help({border="single"}) end, opts)
-        keymap("n", "K", function() lsp.buf.hover({ border = "single", max_height = 30, max_width = 120 }) end, opt("Toggle hover"))
+        keymap({ "n", "i" }, "<C-S>", function() lsp.buf.signature_help({ border = "single" }) end, opts)
+        keymap("n", "K", function() lsp.buf.hover({ border = "single", max_height = 30, max_width = 120 }) end,
+          opt("Toggle hover"))
         keymap("n", "grs", fzf.lsp_document_symbols, opt("Doument Symbols"))
         keymap("n", "grS", fzf.lsp_workspace_symbols, opt("Workspace Symbols"))
-        keymap("n", "grh", function() lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled({})) end, opt("Toggle Inlayhints"))
+        keymap("n", "grh", function() lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled({})) end,
+          opt("Toggle Inlayhints"))
       end,
     })
 
@@ -76,11 +78,15 @@ return {
       basedpyright = {
         name = "basedpyright",
         filetypes = { "python" },
-        cmd = { "basedpyright-langserver", "--stdio" },
+        cmd = (function()
+          local lspdock_config = vim.fn.getcwd() .. "/lspdock.toml"
+          if vim.fn.filereadable(lspdock_config) == 1 then
+            return { "lspdock", "--exec", "basedpyright-langserver", "--stdio" }
+          else
+            return { "basedpyright-langserver", "--stdio" }
+          end
+        end)(),
         settings = {
-          python = {
-            venvPath = vim.fn.expand "~" .. "/venv",
-          },
           basedpyright = {
             disableOrganizeImports = true,
             analysis = {
@@ -88,7 +94,7 @@ return {
               autoImportCompletions = true,
               useLibraryCodeForTypes = true,
               diagnosticMode = "openFilesOnly",
-              typeCheckingMode = "strict",
+              typeCheckingMode = "basic",
               inlayHints = {
                 variableTypes = true,
                 callArgumentNames = true,
@@ -96,6 +102,23 @@ return {
                 genericTypes = false,
               },
             },
+          },
+        },
+      },
+
+      ruff = {
+        cmd = (function()
+          local lspdock_config = vim.fn.getcwd() .. "/lspdock.toml"
+          if vim.fn.filereadable(lspdock_config) == 1 then
+            return { "lspdock", "--exec", "ruff", "server" }
+          else
+            return { "ruff", "server" }
+          end
+        end)(),
+        filetypes = { "python" },
+        init_options = {
+          settings = {
+            args = {},
           },
         },
       },
