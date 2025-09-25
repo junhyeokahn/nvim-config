@@ -78,14 +78,7 @@ return {
       basedpyright = {
         name = "basedpyright",
         filetypes = { "python" },
-        cmd = (function()
-          local lspdock_config = vim.fn.getcwd() .. "/lspdock.toml"
-          if vim.fn.filereadable(lspdock_config) == 1 then
-            return { "lspdock", "--exec", "basedpyright-langserver", "--stdio" }
-          else
-            return { "basedpyright-langserver", "--stdio" }
-          end
-        end)(),
+        cmd = { "basedpyright-langserver", "--stdio" }
         settings = {
           basedpyright = {
             disableOrganizeImports = true,
@@ -107,14 +100,7 @@ return {
       },
 
       ruff = {
-        cmd = (function()
-          local lspdock_config = vim.fn.getcwd() .. "/lspdock.toml"
-          if vim.fn.filereadable(lspdock_config) == 1 then
-            return { "lspdock", "--exec", "ruff", "server" }
-          else
-            return { "ruff", "server" }
-          end
-        end)(),
+        cmd = { "ruff", "server" }
         filetypes = { "python" },
         init_options = {
           settings = {
