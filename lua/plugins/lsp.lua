@@ -78,7 +78,7 @@ return {
       basedpyright = {
         name = "basedpyright",
         filetypes = { "python" },
-        cmd = { "basedpyright-langserver", "--stdio" }
+        cmd = { "basedpyright-langserver", "--stdio" },
         settings = {
           basedpyright = {
             disableOrganizeImports = true,
@@ -100,7 +100,7 @@ return {
       },
 
       ruff = {
-        cmd = { "ruff", "server" }
+        cmd = { "ruff", "server" },
         filetypes = { "python" },
         init_options = {
           settings = {
